@@ -21,12 +21,12 @@ class LinkedList:
 
     def insert_beginning(self, new_value=None):
         new_node = Node(new_value)
-        new_node.next_node = self.head_node
+        new_node.next_node = self.get_head_node()
         self.head_node = new_node
 
     def stringify_list(self):
         string_list = ""
-        node = self.head_node
+        node = self.get_head_node()
 
         while node.next_node:
             string_list += str(node.value) + "\n"
