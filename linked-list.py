@@ -18,3 +18,27 @@ class LinkedList:
 
     def get_head_node(self):
         return self.head_node
+
+    def insert_beginning(self, new_value=None):
+        new_node = Node(new_value)
+        new_node.next_node = self.head_node
+        self.head_node = new_node
+
+    def stringify_list(self):
+        string_list = ""
+        node = self.head_node
+
+        while node.next_node:
+            string_list += str(node.value) + "\n"
+            node = node.next_node
+
+        string_list += str(node.value) + "\n"
+
+        return string_list
+
+
+ll = LinkedList(5)
+ll.insert_beginning(70)
+ll.insert_beginning(5675)
+ll.insert_beginning(90)
+print(ll.stringify_list())
