@@ -26,13 +26,12 @@ class LinkedList:
 
     def stringify_list(self):
         string_list = ""
-        node = self.get_head_node()
+        current_node = self.get_head_node()
 
-        while node.next_node:
-            string_list += str(node.value) + "\n"
-            node = node.next_node
-
-        string_list += str(node.value) + "\n"
+        while current_node:
+            if current_node.get_value() != None:
+                string_list += str(current_node.value) + "\n"
+            current_node = current_node.get_next_node()
 
         return string_list
 
