@@ -42,7 +42,7 @@ class LinkedList:
         else:
             while current_node:
                 current_next_node = current_node.get_next_node()
-                if current_next_node.get_value() == value_to_remove:
+                if current_next_node and current_next_node.get_value() == value_to_remove:
                     current_node.set_next_node(current_next_node.get_next_node())
                     current_node = None
                 else:
@@ -53,4 +53,10 @@ ll = LinkedList(5)
 ll.insert_beginning(70)
 ll.insert_beginning(5675)
 ll.insert_beginning(90)
+print(ll.stringify_list())
+
+ll.remove_node(5675)
+print(ll.stringify_list())
+
+ll.remove_node(2)
 print(ll.stringify_list())
